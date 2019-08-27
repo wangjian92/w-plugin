@@ -17,6 +17,8 @@
         :masked="false"
         type="text"
       ></w-input>
+
+      <input v-mask-filter="111" v-model="input" placeholder="请输入内容" />{{input}}
       <span>{{editableValue}}</span>
     </div>
     <HelloWorld msg="Welcome to Your Vue.js App" />
@@ -28,6 +30,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import wModal from "./components/w-modal.vue";
 import wInputFile from "./components/w-input-file.vue";
 import wInput from "./components/w-input.vue";
+import maskFilter from "./directive/mask-filter"
 
 export default {
   name: "app",
@@ -37,9 +40,11 @@ export default {
     wInput,
     wInputFile
   },
+  directives: { maskFilter },
   data() {
     return {
       wFlag: false,
+      input: '',
       editableValue: ""
     };
   }
