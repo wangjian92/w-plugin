@@ -4,7 +4,7 @@
     :visible="dialogVisible"
     @close="$emit('update:dialogVisible', false)"
     :width="width"
-  >qwe
+  >
     <slot name="modal-body"></slot>
 
     <div
